@@ -1,4 +1,6 @@
-﻿Public Class ReportSelector
+﻿Imports DevExpress.XtraReports.UI
+
+Public Class ReportSelector
     Public RepType As String
 
     Public RepSrtDate As DateTime
@@ -15,7 +17,7 @@
         Try
 
             Me.OrgTableAdapter.Fill(Me.NewDBFDataSet.Org)
-            
+
             RepOrg = ""
 
             RepType = ""
@@ -55,7 +57,7 @@
                 Else
                     e.Page = WizardPage2
                 End If
-              End If
+            End If
             If e.Page.Name = "WizardPage2" And e.Direction = DevExpress.XtraWizard.Direction.Forward Then
 
                 Select Case XtraTabControl1.SelectedTabPage.Name
@@ -188,7 +190,7 @@
                 End If
 
             End If
-           
+
         Catch ex As Exception
             Dim trace As New System.Diagnostics.StackTrace(ex, True)
             With ErrorTrace1
@@ -436,37 +438,37 @@
 
                 Case "RepImp3"
 
-           If RepOrg = "ALL" Then
-                            '##################  Report for ALL Department ( From - To ) 
-                            Dim ffrrA As New XtraReport_DeletedImp
-                            Dim newds As New NewDBFDataSet()
-                            Dim DeAdap As NewDBFDataSetTableAdapters.RepDeletedImpTableAdapter = New NewDBFDataSetTableAdapters.RepDeletedImpTableAdapter()
+                    If RepOrg = "ALL" Then
+                        '##################  Report for ALL Department ( From - To ) 
+                        Dim ffrrA As New XtraReport_DeletedImp
+                        Dim newds As New NewDBFDataSet()
+                        Dim DeAdap As NewDBFDataSetTableAdapters.RepDeletedImpTableAdapter = New NewDBFDataSetTableAdapters.RepDeletedImpTableAdapter()
 
 
-                            DeAdap.GetDeletedImpALLByDate(newds.RepDeletedImp, RepSrtDate, RepEndDate)
-                            ffrrA.XrRichText1.Text = CurLogin
+                        DeAdap.GetDeletedImpALLByDate(newds.RepDeletedImp, RepSrtDate, RepEndDate)
+                        ffrrA.XrRichText1.Text = CurLogin
 
-                            ffrrA.DataSource = newds
-                            ffrrA.DataMember = "RepDeletedImp"
-                            ffrrA.ShowPreviewDialog()
+                        ffrrA.DataSource = newds
+                        ffrrA.DataMember = "RepDeletedImp"
+                        ffrrA.ShowPreviewDialog()
 
 
-                        Else
-                            '##################  Report for ONE  Department ( From - To ) 
+                    Else
+                        '##################  Report for ONE  Department ( From - To ) 
 
-                            Dim ffrrA As New XtraReport_DeletedImp
-                            Dim newds As New NewDBFDataSet()
-                            Dim DeAdap As NewDBFDataSetTableAdapters.RepDeletedImpTableAdapter = New NewDBFDataSetTableAdapters.RepDeletedImpTableAdapter()
+                        Dim ffrrA As New XtraReport_DeletedImp
+                        Dim newds As New NewDBFDataSet()
+                        Dim DeAdap As NewDBFDataSetTableAdapters.RepDeletedImpTableAdapter = New NewDBFDataSetTableAdapters.RepDeletedImpTableAdapter()
 
-                            DeAdap.GetDeletedImpByOrgandDate(newds.RepDeletedImp, RepSrtDate, RepEndDate, RepOrg)
-                            ffrrA.XrRichText1.Text = CurLogin
+                        DeAdap.GetDeletedImpByOrgandDate(newds.RepDeletedImp, RepSrtDate, RepEndDate, RepOrg)
+                        ffrrA.XrRichText1.Text = CurLogin
 
-                            ffrrA.DataSource = newds
-                            ffrrA.DataMember = "RepDeletedImp"
-                            ffrrA.ShowPreviewDialog()
+                        ffrrA.DataSource = newds
+                        ffrrA.DataMember = "RepDeletedImp"
+                        ffrrA.ShowPreviewDialog()
 
-                        End If
-          
+                    End If
+
                 Case "RepImp4"  '  لفترة معينة تقرير الكتب الواردة المتاخرة 
                     If RepAuthId = -1 Then
                         If RepOrg = "ALL" Then
@@ -872,6 +874,7 @@
                             ffrrA.XrLabel3.Text = "تقرير الكتب الواردة المنجزة للفترة من   " + RepSrtDate + " ولغاية " + RepEndDate
                             ffrrA.DataSource = newds
                             ffrrA.DataMember = "ReportExportDoneActions"
+
                             ffrrA.ShowPreviewDialog()
 
                         End If
@@ -976,10 +979,10 @@
                         ffrrA.DataMember = "ToAssigned"
                         ffrrA.ShowPreviewDialog()
                     End If
-          
+
                 Case "RepOther1"
 
-                 
+
                     '    Dim ffrrA As New XtraReport_UserActivity
                     '    Dim newds As New NewDBFDataSet()
                     '    Dim DeAdap As NewDBFDataSetTableAdapters.RepGeneralStatisticTableAdapter = New NewDBFDataSetTableAdapters.RepGeneralStatisticTableAdapter()
@@ -995,7 +998,7 @@
                     '    ffrrA.DataMember = "RepGeneralStatistic"
                     '    ffrrA.ShowPreviewDialog()
 
-                
+
                 Case "RepOther2"
 
                     If RepOrg = "ALL" Then
@@ -1034,7 +1037,7 @@
                         ffrrA.DataMember = "RepGeneralStatistic"
                         ffrrA.ShowPreviewDialog()
                     End If
-         
+
                 Case "RepOther3"  ' تقرير الكتب المطلوب انجازها المتاخرة 
 
                     If RepOrg = "ALL" Then

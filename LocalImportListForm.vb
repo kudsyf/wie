@@ -142,7 +142,7 @@ Public Class LocalImportListForm
         If e.Column.FieldName = "TransferFrom" Then
 
             Dim gv As DevExpress.XtraGrid.Views.Grid.GridView = CType(sender, DevExpress.XtraGrid.Views.Grid.GridView)
-            Dim row As DataRow = gv.GetDataRow(e.RowHandle)
+            Dim row As DataRow = gv.GetDataRow(e.ListSourceRowIndex)
             If row Is Nothing Then Return
             Dim Iid As Integer = CInt(row.Item("ImportId"))
             Dim trb As New NewDBFDataSetTableAdapters.ImportDocTableAdapter
@@ -153,7 +153,7 @@ Public Class LocalImportListForm
         If e.Column.FieldName = "ImportFrom" Then
 
             Dim gv As DevExpress.XtraGrid.Views.Grid.GridView = CType(sender, DevExpress.XtraGrid.Views.Grid.GridView)
-            Dim row As DataRow = gv.GetDataRow(e.RowHandle)
+            Dim row As DataRow = gv.GetDataRow(e.ListSourceRowIndex)
             If row Is Nothing Then Return
             Dim Iid As Integer = CInt(row.Item("ImportId"))
             Dim Aid As Integer = CInt(row.Item("ActionId"))
@@ -165,7 +165,7 @@ Public Class LocalImportListForm
         If e.Column.FieldName = "Folder" Then
 
             Dim gv As DevExpress.XtraGrid.Views.Grid.GridView = CType(sender, DevExpress.XtraGrid.Views.Grid.GridView)
-            Dim row As DataRow = gv.GetDataRow(e.RowHandle)
+            Dim row As DataRow = gv.GetDataRow(e.ListSourceRowIndex)
             If row Is Nothing Then Return
             Dim Iid As Integer = CInt(row.Item("ImportId"))
 

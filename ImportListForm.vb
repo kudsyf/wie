@@ -301,7 +301,7 @@ Public Class ImportListForm
         If e.Column.FieldName = "Foldrnr" Then
 
             Dim gv As DevExpress.XtraGrid.Views.Grid.GridView = CType(sender, DevExpress.XtraGrid.Views.Grid.GridView)
-            Dim row As DataRow = gv.GetDataRow(e.RowHandle)
+            Dim row As DataRow = gv.GetDataRow(e.ListSourceRowIndex)
             If row Is Nothing Then Return
             Dim fid As Integer = CInt(Import_FolderTableAdapter1.GetFolderByImportId(CInt(row.Item("ImportId"))))
             e.Value = FolderTableAdapter1.GetFolderNo(fid)
@@ -310,7 +310,7 @@ Public Class ImportListForm
         If e.Column.FieldName = "Foldernm" Then
 
             Dim gv As DevExpress.XtraGrid.Views.Grid.GridView = CType(sender, DevExpress.XtraGrid.Views.Grid.GridView)
-            Dim row As DataRow = gv.GetDataRow(e.RowHandle)
+            Dim row As DataRow = gv.GetDataRow(e.ListSourceRowIndex)
             If row Is Nothing Then Return
             Dim fid As Integer = CInt(Import_FolderTableAdapter1.GetFolderByImportId(CInt(row.Item("ImportId"))))
             e.Value = FolderTableAdapter1.GetFolderName(fid)
