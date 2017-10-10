@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="GenRep" targetNamespace="http://tempuri.org/GenRep.xsd" xmlns:mstns="http://tempuri.org/GenRep.xsd" xmlns="http://tempuri.org/GenRep.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="NewDBFConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="NewDBFConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WinImpExp.My.MySettings.GlobalReference.Default.NewDBFConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ImportDocTableAdapter" GeneratorDataComponentClassName="ImportDocTableAdapter" Name="ImportDoc" UserDataComponentName="ImportDocTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NewDBFConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ImportDoc.Import_Date, ImportDoc.Book_no, ImportDoc.Book_Date, ImportDoc.Summary, ImportDoc.Subject, Org.Org_Name AS ImportOrg, 
+                         Org_1.Org_Name AS ImporetFromOrg, Type.Type, ImportDoc.Owner_Org_No, ImportDoc.Import_Org_No, ImportDoc.Import_No, Import_Action.OpenAction, 
+                         Import_Action.ActionId, Import_Action.Action_Date, Import_Action.Action, Import_Action.Finish_Within, Import_Action.end_Action_Date, Import_Action.To_Org_No, 
+                         Import_Action.Action_Type, Actions.ActionName, Org_2.Org_Name AS To_Org_Name, Import_Action.ConsultationWith, 
+                         CASE Import_Action.OpenAction WHEN 0 THEN 'غير مكتمل' WHEN 1 THEN 'مكتمل' ELSE 'غير محدد' END AS STATUSS, Security.Security
+FROM            ImportDoc LEFT OUTER JOIN
+                         Type ON ImportDoc.Type_Code = Type.Type_Code LEFT OUTER JOIN
+                         Security ON ImportDoc.Security_Code = Security.Security_Code LEFT OUTER JOIN
+                         Org ON ImportDoc.Owner_Org_No = Org.Org_no LEFT OUTER JOIN
+                         Org AS Org_1 ON ImportDoc.Import_Org_No = Org_1.Org_no LEFT OUTER JOIN
+                         Import_Action ON ImportDoc.ImportId = Import_Action.ImportId LEFT OUTER JOIN
+                         Actions ON Import_Action.Action_Type = Actions.ActionType LEFT OUTER JOIN
+                         Org AS Org_2 ON Import_Action.To_Org_No = Org_2.Org_no</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Import_Date" DataSetColumn="Import_Date" />
+              <Mapping SourceColumn="Book_Date" DataSetColumn="Book_Date" />
+              <Mapping SourceColumn="Subject" DataSetColumn="Subject" />
+              <Mapping SourceColumn="Summary" DataSetColumn="Summary" />
+              <Mapping SourceColumn="Book_no" DataSetColumn="Book_no" />
+              <Mapping SourceColumn="ImportOrg" DataSetColumn="ImportOrg" />
+              <Mapping SourceColumn="ImporetFromOrg" DataSetColumn="ImporetFromOrg" />
+              <Mapping SourceColumn="Type" DataSetColumn="Type" />
+              <Mapping SourceColumn="Owner_Org_No" DataSetColumn="Owner_Org_No" />
+              <Mapping SourceColumn="Import_Org_No" DataSetColumn="Import_Org_No" />
+              <Mapping SourceColumn="Import_No" DataSetColumn="Import_No" />
+              <Mapping SourceColumn="OpenAction" DataSetColumn="OpenAction" />
+              <Mapping SourceColumn="ActionId" DataSetColumn="ActionId" />
+              <Mapping SourceColumn="Action_Date" DataSetColumn="Action_Date" />
+              <Mapping SourceColumn="Action" DataSetColumn="Action" />
+              <Mapping SourceColumn="Finish_Within" DataSetColumn="Finish_Within" />
+              <Mapping SourceColumn="end_Action_Date" DataSetColumn="end_Action_Date" />
+              <Mapping SourceColumn="To_Org_No" DataSetColumn="To_Org_No" />
+              <Mapping SourceColumn="Action_Type" DataSetColumn="Action_Type" />
+              <Mapping SourceColumn="ActionName" DataSetColumn="ActionName" />
+              <Mapping SourceColumn="To_Org_Name" DataSetColumn="To_Org_Name" />
+              <Mapping SourceColumn="ConsultationWith" DataSetColumn="ConsultationWith" />
+              <Mapping SourceColumn="STATUSS" DataSetColumn="STATUSS" />
+              <Mapping SourceColumn="Security" DataSetColumn="Security" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="OrgTableAdapter" GeneratorDataComponentClassName="OrgTableAdapter" Name="Org" UserDataComponentName="OrgTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NewDBFConnectionString (MySettings)" DbObjectName="NICADMINFULL.dbo.Org" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Org_no, Org_Name
+FROM            Org</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Org_no" DataSetColumn="Org_no" />
+              <Mapping SourceColumn="Org_Name" DataSetColumn="Org_Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Org1TableAdapter" GeneratorDataComponentClassName="Org1TableAdapter" Name="Org1" UserDataComponentName="Org1TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NewDBFConnectionString (MySettings)" DbObjectName="NICADMINFULL.dbo.Org" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Org_no, Org_Name
+FROM            Org</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Org_no" DataSetColumn="Org_no" />
+              <Mapping SourceColumn="Org_Name" DataSetColumn="Org_Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ImportNoTableAdapter" GeneratorDataComponentClassName="ImportNoTableAdapter" Name="ImportNo" UserDataComponentName="ImportNoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NewDBFConnectionString (MySettings)" DbObjectName="NICADMINFULL.dbo.ImportDoc" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT Import_No
+FROM            ImportDoc
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Import_No" DataSetColumn="Import_No" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BookNoTableAdapter" GeneratorDataComponentClassName="BookNoTableAdapter" Name="BookNo" UserDataComponentName="BookNoTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NewDBFConnectionString (MySettings)" DbObjectName="NICADMINFULL.dbo.ImportDoc" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DISTINCT Book_no
+FROM            ImportDoc
+ORDER BY Book_no</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Book_no" DataSetColumn="Book_no" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Org2TableAdapter" GeneratorDataComponentClassName="Org2TableAdapter" Name="Org2" UserDataComponentName="Org2TableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NewDBFConnectionString (MySettings)" DbObjectName="NICADMINFULL.dbo.Org" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        Org_no, Org_Name
+FROM            Org</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Org_no" DataSetColumn="Org_no" />
+              <Mapping SourceColumn="Org_Name" DataSetColumn="Org_Name" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ActionsTableAdapter" GeneratorDataComponentClassName="ActionsTableAdapter" Name="Actions" UserDataComponentName="ActionsTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="NewDBFConnectionString (MySettings)" DbObjectName="NICADMINFULL.dbo.Actions" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [Actions] ([ActionType], [ActionName]) VALUES (@ActionType, @ActionName)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@ActionType" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="ActionType" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiStringFixedLength" Direction="Input" ParameterName="@ActionName" Precision="0" ProviderType="Char" Scale="0" Size="0" SourceColumn="ActionName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        ActionType, ActionName
+FROM            Actions</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ActionType" DataSetColumn="ActionType" />
+              <Mapping SourceColumn="ActionName" DataSetColumn="ActionName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="GenRep" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="GenRep" msprop:Generator_UserDSName="GenRep">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ImportDoc" msprop:Generator_TableClassName="ImportDocDataTable" msprop:Generator_TableVarName="tableImportDoc" msprop:Generator_TablePropName="ImportDoc" msprop:Generator_RowDeletingName="ImportDocRowDeleting" msprop:Generator_UserTableName="ImportDoc" msprop:Generator_RowChangingName="ImportDocRowChanging" msprop:Generator_RowEvHandlerName="ImportDocRowChangeEventHandler" msprop:Generator_RowDeletedName="ImportDocRowDeleted" msprop:Generator_RowEvArgName="ImportDocRowChangeEvent" msprop:Generator_RowChangedName="ImportDocRowChanged" msprop:Generator_RowClassName="ImportDocRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Import_Date" msprop:Generator_ColumnVarNameInTable="columnImport_Date" msprop:Generator_ColumnPropNameInRow="Import_Date" msprop:Generator_ColumnPropNameInTable="Import_DateColumn" msprop:Generator_UserColumnName="Import_Date" type="xs:dateTime" />
+              <xs:element name="Book_Date" msprop:Generator_ColumnVarNameInTable="columnBook_Date" msprop:Generator_ColumnPropNameInRow="Book_Date" msprop:Generator_ColumnPropNameInTable="Book_DateColumn" msprop:Generator_UserColumnName="Book_Date" type="xs:dateTime" />
+              <xs:element name="Subject" msprop:Generator_ColumnVarNameInTable="columnSubject" msprop:Generator_ColumnPropNameInRow="Subject" msprop:Generator_ColumnPropNameInTable="SubjectColumn" msprop:Generator_UserColumnName="Subject">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Summary" msprop:Generator_ColumnVarNameInTable="columnSummary" msprop:Generator_ColumnPropNameInRow="Summary" msprop:Generator_ColumnPropNameInTable="SummaryColumn" msprop:Generator_UserColumnName="Summary">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Book_no" msprop:Generator_ColumnVarNameInTable="columnBook_no" msprop:Generator_ColumnPropNameInRow="Book_no" msprop:Generator_ColumnPropNameInTable="Book_noColumn" msprop:Generator_UserColumnName="Book_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ImportOrg" msprop:Generator_ColumnVarNameInTable="columnImportOrg" msprop:Generator_ColumnPropNameInRow="ImportOrg" msprop:Generator_ColumnPropNameInTable="ImportOrgColumn" msprop:Generator_UserColumnName="ImportOrg" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ImporetFromOrg" msprop:Generator_ColumnVarNameInTable="columnImporetFromOrg" msprop:Generator_ColumnPropNameInRow="ImporetFromOrg" msprop:Generator_ColumnPropNameInTable="ImporetFromOrgColumn" msprop:Generator_UserColumnName="ImporetFromOrg" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Type" msprop:Generator_ColumnVarNameInTable="columnType" msprop:Generator_ColumnPropNameInRow="Type" msprop:Generator_ColumnPropNameInTable="TypeColumn" msprop:Generator_UserColumnName="Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Owner_Org_No" msprop:Generator_ColumnVarNameInTable="columnOwner_Org_No" msprop:Generator_ColumnPropNameInRow="Owner_Org_No" msprop:Generator_ColumnPropNameInTable="Owner_Org_NoColumn" msprop:Generator_UserColumnName="Owner_Org_No">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Import_Org_No" msprop:Generator_ColumnVarNameInTable="columnImport_Org_No" msprop:Generator_ColumnPropNameInRow="Import_Org_No" msprop:Generator_ColumnPropNameInTable="Import_Org_NoColumn" msprop:Generator_UserColumnName="Import_Org_No">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Import_No" msprop:Generator_ColumnVarNameInTable="columnImport_No" msprop:Generator_ColumnPropNameInRow="Import_No" msprop:Generator_ColumnPropNameInTable="Import_NoColumn" msprop:Generator_UserColumnName="Import_No" type="xs:long" />
+              <xs:element name="OpenAction" msprop:Generator_ColumnVarNameInTable="columnOpenAction" msprop:Generator_ColumnPropNameInRow="OpenAction" msprop:Generator_ColumnPropNameInTable="OpenActionColumn" msprop:Generator_UserColumnName="OpenAction" type="xs:boolean" minOccurs="0" />
+              <xs:element name="ActionId" msprop:Generator_ColumnVarNameInTable="columnActionId" msprop:Generator_ColumnPropNameInRow="ActionId" msprop:Generator_ColumnPropNameInTable="ActionIdColumn" msprop:Generator_UserColumnName="ActionId" type="xs:long" minOccurs="0" />
+              <xs:element name="Action_Date" msprop:Generator_ColumnVarNameInTable="columnAction_Date" msprop:Generator_ColumnPropNameInRow="Action_Date" msprop:Generator_ColumnPropNameInTable="Action_DateColumn" msprop:Generator_UserColumnName="Action_Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Action" msprop:Generator_ColumnVarNameInTable="columnAction" msprop:Generator_ColumnPropNameInRow="Action" msprop:Generator_ColumnPropNameInTable="ActionColumn" msprop:Generator_UserColumnName="Action" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Finish_Within" msprop:Generator_ColumnVarNameInTable="columnFinish_Within" msprop:Generator_ColumnPropNameInRow="Finish_Within" msprop:Generator_ColumnPropNameInTable="Finish_WithinColumn" msprop:Generator_UserColumnName="Finish_Within" type="xs:int" minOccurs="0" />
+              <xs:element name="end_Action_Date" msprop:Generator_ColumnVarNameInTable="columnend_Action_Date" msprop:Generator_ColumnPropNameInRow="end_Action_Date" msprop:Generator_ColumnPropNameInTable="end_Action_DateColumn" msprop:Generator_UserColumnName="end_Action_Date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="To_Org_No" msprop:Generator_ColumnVarNameInTable="columnTo_Org_No" msprop:Generator_ColumnPropNameInRow="To_Org_No" msprop:Generator_ColumnPropNameInTable="To_Org_NoColumn" msprop:Generator_UserColumnName="To_Org_No" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Action_Type" msprop:Generator_ColumnVarNameInTable="columnAction_Type" msprop:Generator_ColumnPropNameInRow="Action_Type" msprop:Generator_ColumnPropNameInTable="Action_TypeColumn" msprop:Generator_UserColumnName="Action_Type" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActionName" msprop:Generator_ColumnVarNameInTable="columnActionName" msprop:Generator_ColumnPropNameInRow="ActionName" msprop:Generator_ColumnPropNameInTable="ActionNameColumn" msprop:Generator_UserColumnName="ActionName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="To_Org_Name" msprop:Generator_ColumnVarNameInTable="columnTo_Org_Name" msprop:Generator_ColumnPropNameInRow="To_Org_Name" msprop:Generator_ColumnPropNameInTable="To_Org_NameColumn" msprop:Generator_UserColumnName="To_Org_Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ConsultationWith" msprop:Generator_ColumnVarNameInTable="columnConsultationWith" msprop:Generator_ColumnPropNameInRow="ConsultationWith" msprop:Generator_ColumnPropNameInTable="ConsultationWithColumn" msprop:Generator_UserColumnName="ConsultationWith" type="xs:int" minOccurs="0" />
+              <xs:element name="STATUSS" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnSTATUSS" msprop:Generator_ColumnPropNameInRow="STATUSS" msprop:Generator_ColumnPropNameInTable="STATUSSColumn" msprop:Generator_UserColumnName="STATUSS" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="9" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Security" msprop:Generator_ColumnVarNameInTable="columnSecurity" msprop:Generator_ColumnPropNameInRow="Security" msprop:Generator_ColumnPropNameInTable="SecurityColumn" msprop:Generator_UserColumnName="Security" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Org" msprop:Generator_TableClassName="OrgDataTable" msprop:Generator_TableVarName="tableOrg" msprop:Generator_TablePropName="Org" msprop:Generator_RowDeletingName="OrgRowDeleting" msprop:Generator_UserTableName="Org" msprop:Generator_RowChangingName="OrgRowChanging" msprop:Generator_RowEvHandlerName="OrgRowChangeEventHandler" msprop:Generator_RowDeletedName="OrgRowDeleted" msprop:Generator_RowEvArgName="OrgRowChangeEvent" msprop:Generator_RowChangedName="OrgRowChanged" msprop:Generator_RowClassName="OrgRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Org_no" msprop:Generator_ColumnVarNameInTable="columnOrg_no" msprop:Generator_ColumnPropNameInRow="Org_no" msprop:Generator_ColumnPropNameInTable="Org_noColumn" msprop:Generator_UserColumnName="Org_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Org_Name" msprop:Generator_ColumnVarNameInTable="columnOrg_Name" msprop:Generator_ColumnPropNameInRow="Org_Name" msprop:Generator_ColumnPropNameInTable="Org_NameColumn" msprop:Generator_UserColumnName="Org_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Org1" msprop:Generator_TableClassName="Org1DataTable" msprop:Generator_TableVarName="tableOrg1" msprop:Generator_TablePropName="Org1" msprop:Generator_RowDeletingName="Org1RowDeleting" msprop:Generator_UserTableName="Org1" msprop:Generator_RowChangingName="Org1RowChanging" msprop:Generator_RowEvHandlerName="Org1RowChangeEventHandler" msprop:Generator_RowDeletedName="Org1RowDeleted" msprop:Generator_RowEvArgName="Org1RowChangeEvent" msprop:Generator_RowChangedName="Org1RowChanged" msprop:Generator_RowClassName="Org1Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Org_no" msprop:Generator_ColumnVarNameInTable="columnOrg_no" msprop:Generator_ColumnPropNameInRow="Org_no" msprop:Generator_ColumnPropNameInTable="Org_noColumn" msprop:Generator_UserColumnName="Org_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Org_Name" msprop:Generator_ColumnVarNameInTable="columnOrg_Name" msprop:Generator_ColumnPropNameInRow="Org_Name" msprop:Generator_ColumnPropNameInTable="Org_NameColumn" msprop:Generator_UserColumnName="Org_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ImportNo" msprop:Generator_TableClassName="ImportNoDataTable" msprop:Generator_TableVarName="tableImportNo" msprop:Generator_TablePropName="ImportNo" msprop:Generator_RowDeletingName="ImportNoRowDeleting" msprop:Generator_UserTableName="ImportNo" msprop:Generator_RowChangingName="ImportNoRowChanging" msprop:Generator_RowEvHandlerName="ImportNoRowChangeEventHandler" msprop:Generator_RowDeletedName="ImportNoRowDeleted" msprop:Generator_RowEvArgName="ImportNoRowChangeEvent" msprop:Generator_RowChangedName="ImportNoRowChanged" msprop:Generator_RowClassName="ImportNoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Import_No" msprop:Generator_ColumnVarNameInTable="columnImport_No" msprop:Generator_ColumnPropNameInRow="Import_No" msprop:Generator_ColumnPropNameInTable="Import_NoColumn" msprop:Generator_UserColumnName="Import_No" type="xs:long" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="BookNo" msprop:Generator_TableClassName="BookNoDataTable" msprop:Generator_TableVarName="tableBookNo" msprop:Generator_TablePropName="BookNo" msprop:Generator_RowDeletingName="BookNoRowDeleting" msprop:Generator_UserTableName="BookNo" msprop:Generator_RowChangingName="BookNoRowChanging" msprop:Generator_RowEvHandlerName="BookNoRowChangeEventHandler" msprop:Generator_RowDeletedName="BookNoRowDeleted" msprop:Generator_RowEvArgName="BookNoRowChangeEvent" msprop:Generator_RowChangedName="BookNoRowChanged" msprop:Generator_RowClassName="BookNoRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Book_no" msprop:Generator_ColumnVarNameInTable="columnBook_no" msprop:Generator_ColumnPropNameInRow="Book_no" msprop:Generator_ColumnPropNameInTable="Book_noColumn" msprop:Generator_UserColumnName="Book_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Org2" msprop:Generator_TableClassName="Org2DataTable" msprop:Generator_TableVarName="tableOrg2" msprop:Generator_TablePropName="Org2" msprop:Generator_RowDeletingName="Org2RowDeleting" msprop:Generator_UserTableName="Org2" msprop:Generator_RowChangingName="Org2RowChanging" msprop:Generator_RowEvHandlerName="Org2RowChangeEventHandler" msprop:Generator_RowDeletedName="Org2RowDeleted" msprop:Generator_RowEvArgName="Org2RowChangeEvent" msprop:Generator_RowChangedName="Org2RowChanged" msprop:Generator_RowClassName="Org2Row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Org_no" msprop:Generator_ColumnVarNameInTable="columnOrg_no" msprop:Generator_ColumnPropNameInRow="Org_no" msprop:Generator_ColumnPropNameInTable="Org_noColumn" msprop:Generator_UserColumnName="Org_no">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Org_Name" msprop:Generator_ColumnVarNameInTable="columnOrg_Name" msprop:Generator_ColumnPropNameInRow="Org_Name" msprop:Generator_ColumnPropNameInTable="Org_NameColumn" msprop:Generator_UserColumnName="Org_Name">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Actions" msprop:Generator_TableClassName="ActionsDataTable" msprop:Generator_TableVarName="tableActions" msprop:Generator_TablePropName="Actions" msprop:Generator_RowDeletingName="ActionsRowDeleting" msprop:Generator_UserTableName="Actions" msprop:Generator_RowChangingName="ActionsRowChanging" msprop:Generator_RowEvHandlerName="ActionsRowChangeEventHandler" msprop:Generator_RowDeletedName="ActionsRowDeleted" msprop:Generator_RowEvArgName="ActionsRowChangeEvent" msprop:Generator_RowChangedName="ActionsRowChanged" msprop:Generator_RowClassName="ActionsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ActionType" msprop:Generator_ColumnVarNameInTable="columnActionType" msprop:Generator_ColumnPropNameInRow="ActionType" msprop:Generator_ColumnPropNameInTable="ActionTypeColumn" msprop:Generator_UserColumnName="ActionType" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActionName" msprop:Generator_ColumnVarNameInTable="columnActionName" msprop:Generator_ColumnPropNameInRow="ActionName" msprop:Generator_ColumnPropNameInTable="ActionNameColumn" msprop:Generator_UserColumnName="ActionName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

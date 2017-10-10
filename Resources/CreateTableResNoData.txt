@@ -1,0 +1,464 @@
+﻿SET ANSI_NULLS ON
+SET QUOTED_IDENTIFIER ON
+SET ANSI_PADDING ON
+CREATE TABLE [dbo].[to_assigned](
+	[owner_Org_No] [char](4) NULL,
+	[Subject] [varchar](250) NULL,
+	[SendToSignedDate] [datetime] NULL,
+	[userName] [varchar](10) NULL
+) ON [PRIMARY]
+SET ANSI_PADDING OFF
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[orgshort](
+	[firstcode] [char](6) NULL,
+	[code] [char](4) NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Org_Users]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Org_Users](
+	[Owner_Org_No] [char](4) NOT NULL,
+	[Login_Name] [char](10) NOT NULL,
+	[User_Name] [char](30) NOT NULL,
+	[PassWord] [char](10) NOT NULL,
+	[Enable_Login] [bit] NOT NULL,
+	[CanExp] [bit] NULL,
+	[CanImp] [bit] NULL,
+	[CanRep] [bit] NULL,
+	[CanFollow] [bit] NULL,
+	[CanPrint] [bit] NULL,
+	[CanRecycle] [bit] NULL,
+	[CanEntImp] [bit] NULL,
+	[CanCreateDB] [bit] NULL,
+	[CanBackupDB] [bit] NULL,
+	[CanDBrestore] [bit] NULL,
+	[CanSetting] [bit] NULL,
+	[CanUsersManag] [bit] NULL
+) ON [PRIMARY]
+
+INSERT [dbo].[Org_Users] ([Owner_Org_No], [Login_Name], [User_Name], [PassWord], [Enable_Login], [CanExp], [CanImp], [CanRep], [CanFollow], [CanPrint], [CanRecycle], [CanEntImp], [CanCreateDB], [CanBackupDB], [CanDBrestore], [CanSetting], [CanUsersManag]) VALUES (N'0000', N'admin     ', N'administrator                 ', N'          ', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Org]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Org](
+	[Org_no] [char](4) NOT NULL,
+	[Org_Name] [char](50) NOT NULL,
+	[Org_Up] [char](4) NOT NULL,
+	[org_folder] [nchar](50) NOT NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Login_Session]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Login_Session](
+	[SessionId] [bigint] NOT NULL,
+	[owner_org_no] [char](4) NOT NULL,
+	[DateTime] [datetime] NOT NULL,
+	[Login_Name] [char](10) NOT NULL,
+	[TYPE] [char](50) NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[ImportDoc]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[ImportDoc](
+	[Owner_Org_No] [char](4) NOT NULL,
+	[ImportId] [bigint] NOT NULL,
+	[Import_No] [bigint] NOT NULL,
+	[Import_Date] [datetime] NOT NULL,
+	[Book_no] [char](20) NOT NULL,
+	[Book_Date] [datetime] NOT NULL,
+	[Import_Org_No] [char](4) NOT NULL,
+	[Transfer_From] [char](4) NULL,
+	[Transfer_Date] [datetime] NULL,
+	[Type_Code] [char](1) NOT NULL,
+	[Security_Code] [char](1) NOT NULL,
+	[Subject] [varchar](150) NOT NULL,
+	[Summary] [varchar](max) NOT NULL,
+	[UnderAction] [bit] NOT NULL,
+	[AboutToSign] [bit] NOT NULL,
+	[Deleted] [bit] NULL,
+	[Create_Login] [char](10) NOT NULL,
+	[Create_Date] [datetime] NOT NULL,
+	[Update_Login] [char](10) NOT NULL,
+	[Update_Date] [datetime] NOT NULL,
+	[Delete_Login] [char](10) NULL,
+	[Delete_Date] [datetime] NULL,
+	[CurrentOrg] [bigint] NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Import_Image]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Import_Image](
+	[ImportId] [bigint] NOT NULL,
+	[ImageType] [char](6) NOT NULL,
+	[ImageId] [bigint] NOT NULL,
+	[PageId] [bigint] NOT NULL,
+	[PageLocation] [varchar](max) NOT NULL,
+	[ImageBin] [varbinary](max) NULL,
+	[ThmbBin] [varbinary](max) NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Import_Folder]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+CREATE TABLE [dbo].[Import_Folder](
+	[ImportId] [bigint] NOT NULL,
+	[FolderId] [bigint] NOT NULL,
+	[folder_date] [datetime] NOT NULL,
+	[folder_seq] [int] NULL
+) ON [PRIMARY]
+
+/****** Object:  Table [dbo].[Import_Denote]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Import_Denote](
+	[ImportId] [bigint] NOT NULL,
+	[Denote_Export_Import] [char](1) NOT NULL,
+	[DenoteId] [bigint] NOT NULL,
+	[Book_No] [char](20) NOT NULL,
+	[Book_Date] [datetime] NOT NULL,
+	[Book_Org_No] [char](4) NOT NULL,
+	[ExportId] [bigint] NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Import_Attachment]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Import_Attachment](
+	[ImportId] [bigint] NOT NULL,
+	[AttachId] [int] NOT NULL,
+	[Attachment] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Import_Attachment] PRIMARY KEY CLUSTERED 
+(
+	[ImportId] ASC,
+	[AttachId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Import_Action_To]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Import_Action_To](
+	[importid] [bigint] NOT NULL,
+	[ActionId] [bigint] NOT NULL,
+	[To_Org_No] [char](4) NOT NULL,
+	[action_end_date] [datetime] NULL,
+	[Return_Action] [varchar](max) NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Import_Action]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Import_Action](
+	[ImportId] [bigint] NOT NULL,
+	[ActionId] [bigint] NOT NULL,
+	[Action_Type] [char](1) NOT NULL,
+	[Action_Date] [datetime] NOT NULL,
+	[Action] [varchar](250) NULL,
+	[Finish_Within] [int] NOT NULL,
+	[Finish_Within_Unit] [char](2) NOT NULL,
+	[Update_Login] [char](10) NOT NULL,
+	[Update_Date] [datetime] NOT NULL,
+	[Create_Login] [char](10) NOT NULL,
+	[Create_Date] [datetime] NOT NULL,
+	[To_Org_No] [char](4) NULL,
+	[end_Action_Date] [datetime] NULL,
+	[Cur_Org] [char](4) NULL,
+	[ExportedId] [bigint] NULL,
+	[OpenAction] [bit] NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Folder]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Folder](
+	[FolderId] [bigint] NOT NULL,
+	[Owner_Org_No] [char](4) NOT NULL,
+	[Folder_No] [char](4) NOT NULL,
+	[Folder_Name] [char](30) NOT NULL,
+	[Year_No] [char](4) NULL,
+ CONSTRAINT [PK_Folder] PRIMARY KEY CLUSTERED 
+(
+	[FolderId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[ExportDoc]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[ExportDoc](
+	[Owner_Org_No] [char](4) NOT NULL,
+	[ExportId] [bigint] NOT NULL,
+	[Book_no] [char](20) NOT NULL,
+	[Book_Date] [datetime] NOT NULL,
+	[Type_Code] [char](1) NOT NULL,
+	[Security_Code] [char](1) NOT NULL,
+	[Subject] [varchar](150) NOT NULL,
+	[Summary] [varchar](max) NOT NULL,
+	[UnderAction] [bit] NOT NULL,
+	[AboutToSign] [bit] NOT NULL,
+	[Deleted] [bit] NULL,
+	[Update_Login] [char](10) NOT NULL,
+	[Update_Date] [datetime] NOT NULL,
+	[Create_Login] [char](10) NOT NULL,
+	[Create_Date] [datetime] NOT NULL,
+	[Delete_Login] [char](10) NULL,
+	[Delete_Date] [datetime] NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Export_To]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Export_To](
+	[ExportId] [bigint] NOT NULL,
+	[To_Org_No] [char](4) NOT NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Export_Image]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Export_Image](
+	[ExportId] [bigint] NOT NULL,
+	[ImageType] [char](6) NOT NULL,
+	[ImageId] [bigint] NOT NULL,
+	[PageId] [bigint] NOT NULL,
+	[PageLocation] [varchar](max) NOT NULL,
+	[ImageBin] [varbinary](max) NULL,
+	[ThmbBin] [varbinary](max) NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Export_Folder]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+CREATE TABLE [dbo].[Export_Folder](
+	[ExportId] [bigint] NOT NULL,
+	[FolderId] [bigint] NOT NULL,
+	[folder_date] [datetime] NOT NULL,
+	[folder_seq] [int] NULL
+) ON [PRIMARY]
+
+/****** Object:  Table [dbo].[Export_Denote]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Export_Denote](
+	[ExportId] [bigint] NOT NULL,
+	[Denote_Export_Import] [char](1) NOT NULL,
+	[DenoteId] [bigint] NOT NULL,
+	[Book_No] [char](20) NOT NULL,
+	[Book_Date] [datetime] NOT NULL,
+	[Book_Org_No] [char](4) NOT NULL,
+	[ImportId] [bigint] NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Export_Attachment]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Export_Attachment](
+	[ExportId] [bigint] NOT NULL,
+	[AttachId] [int] NOT NULL,
+	[Attachment] [varchar](50) NOT NULL,
+ CONSTRAINT [PK_Export_Attachment] PRIMARY KEY CLUSTERED 
+(
+	[ExportId] ASC,
+	[AttachId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[Export_Action]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[Export_Action](
+	[ExportId] [bigint] NOT NULL,
+	[ActionId] [bigint] NOT NULL,
+	[Action_Type] [char](1) NOT NULL,
+	[Action_Date] [datetime] NOT NULL,
+	[Action] [varchar](250) NULL,
+	[finish_Within] [int] NOT NULL,
+	[finish_Within_Unit] [char](2) NOT NULL,
+	[Action_End_Date] [datetime] NULL,
+	[Update_Login] [char](10) NOT NULL,
+	[Update_Date] [datetime] NOT NULL,
+	[Create_Login] [char](10) NOT NULL,
+	[Create_Date] [datetime] NOT NULL,
+ CONSTRAINT [PK_Export_Action] PRIMARY KEY CLUSTERED 
+(
+	[ExportId] ASC,
+	[ActionId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Table [dbo].[CurrentImportOrgusers]    Script Date: 02/10/2011 22:59:28 ******/
+SET ANSI_NULLS ON
+
+SET QUOTED_IDENTIFIER ON
+
+SET ANSI_PADDING ON
+
+CREATE TABLE [dbo].[CurrentImportOrgusers](
+	[ImportCurrentOrg] [bigint] NULL,
+	[Org] [char](4) NULL
+) ON [PRIMARY]
+
+SET ANSI_PADDING OFF
+
+/****** Object:  Default [DF_Export_Action_finish_Within]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[Export_Action] ADD  CONSTRAINT [DF_Export_Action_finish_Within]  DEFAULT ((0)) FOR [finish_Within]
+
+/****** Object:  Default [DF_Export_Action_finish_Within_Unit]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[Export_Action] ADD  CONSTRAINT [DF_Export_Action_finish_Within_Unit]  DEFAULT ('dd') FOR [finish_Within_Unit]
+
+/****** Object:  Default [DF_Export_Denote_DenoteId]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[Export_Denote] ADD  CONSTRAINT [DF_Export_Denote_DenoteId]  DEFAULT ((-1)) FOR [DenoteId]
+
+/****** Object:  Default [DF_Export_Folder_folder_seq]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[Export_Folder] ADD  CONSTRAINT [DF_Export_Folder_folder_seq]  DEFAULT ((0)) FOR [folder_seq]
+
+/****** Object:  Default [DF_ExportDoc_UnderAction]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[ExportDoc] ADD  CONSTRAINT [DF_ExportDoc_UnderAction]  DEFAULT ((1)) FOR [UnderAction]
+
+/****** Object:  Default [DF_ExportDoc_AboutToSign]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[ExportDoc] ADD  CONSTRAINT [DF_ExportDoc_AboutToSign]  DEFAULT ((0)) FOR [AboutToSign]
+
+/****** Object:  Default [DF_ExportDoc_Deleted]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[ExportDoc] ADD  CONSTRAINT [DF_ExportDoc_Deleted]  DEFAULT ((0)) FOR [Deleted]
+
+/****** Object:  Default [DF_Import_Action_Finish_Within]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[Import_Action] ADD  CONSTRAINT [DF_Import_Action_Finish_Within]  DEFAULT ((0)) FOR [Finish_Within]
+
+/****** Object:  Default [DF_Import_Action_Finish_Within_Unit]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[Import_Action] ADD  CONSTRAINT [DF_Import_Action_Finish_Within_Unit]  DEFAULT ('dd') FOR [Finish_Within_Unit]
+
+/****** Object:  Default [DF_Import_Folder_folder_seq]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[Import_Folder] ADD  CONSTRAINT [DF_Import_Folder_folder_seq]  DEFAULT ((0)) FOR [folder_seq]
+
+/****** Object:  Default [DF_ImportDoc_Owner_Org_No]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[ImportDoc] ADD  CONSTRAINT [DF_ImportDoc_Owner_Org_No]  DEFAULT ((0)) FOR [Owner_Org_No]
+
+/****** Object:  Default [DF_ImportDoc_Transfer_From]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[ImportDoc] ADD  CONSTRAINT [DF_ImportDoc_Transfer_From]  DEFAULT (' ') FOR [Transfer_From]
+
+/****** Object:  Default [DF_ImportDoc_UnderAction]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[ImportDoc] ADD  CONSTRAINT [DF_ImportDoc_UnderAction]  DEFAULT ((1)) FOR [UnderAction]
+
+/****** Object:  Default [DF_ImportDoc_AboutToSign]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[ImportDoc] ADD  CONSTRAINT [DF_ImportDoc_AboutToSign]  DEFAULT ((0)) FOR [AboutToSign]
+
+/****** Object:  Default [DF_ImportDoc_Deleted]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[ImportDoc] ADD  CONSTRAINT [DF_ImportDoc_Deleted]  DEFAULT ((0)) FOR [Deleted]
+
+/****** Object:  Default [DF_Org_org_folder]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[Org] ADD  CONSTRAINT [DF_Org_org_folder]  DEFAULT ('عام') FOR [org_folder]
+
+/****** Object:  Default [DF_Org_Users_Enable_Login]    Script Date: 02/10/2011 22:59:28 ******/
+ALTER TABLE [dbo].[Org_Users] ADD  CONSTRAINT [DF_Org_Users_Enable_Login]  DEFAULT ((0)) FOR [Enable_Login]
+

@@ -1,0 +1,1365 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{BCA754E6-9779-4F91-915C-65DBFAA7BD2C}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WinImpExp.Program</StartupObject>
+    <RootNamespace>WinImpExp</RootNamespace>
+    <AssemblyName>WinImpExp</AssemblyName>
+    <MyType>WindowsFormsWithCustomSubMain</MyType>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <SignAssembly>false</SignAssembly>
+    <SignManifests>false</SignManifests>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>G:\Dropbox\NIC %282%29\Final Program\WinImpExp\WinImpExp 9-12-2014/</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>true</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <UpdateUrl>\\192.168.0.249\update\</UpdateUrl>
+    <ProductName>نظام ادارة الصادر والوارد</ProductName>
+    <PublisherName>Import Export Manager</PublisherName>
+    <MinimumRequiredVersion>1.0.0.33</MinimumRequiredVersion>
+    <WebPage>publish.htm</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>139</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <CreateDesktopShortcut>true</CreateDesktopShortcut>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>WinImpExp.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>WinImpExp.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>easymoblog.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>00C8909FE3ED4D0C54B6A1AE37D1197DAE0FAFBC</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>WinImpExp_1_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <TargetZone>LocalIntranet</TargetZone>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>WinImpExp.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Debug\WinImpExp.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>WinImpExp.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisLogFile>bin\Release\WinImpExp.exe.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.vb</CodeAnalysisModuleSuppressionsFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisRuleDirectories>;C:\Program Files (x86)\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>false</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.Charts.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.PivotGrid.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.1.Wizard, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPivotGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v15.1.UI, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v15.1.Extensions, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Xpf.Printing.v15.1.Service, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v15.1.Service, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraRichEdit.v15.1.Extensions, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.1.Core, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.1.Reporting.Extensions, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v15.1, Version=15.1.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="Rebex.Mail">
+      <HintPath>bin\Release\Rebex.Mail.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Net.Imap">
+      <HintPath>bin\Release\Rebex.Net.Imap.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Net.ProxySocket">
+      <HintPath>bin\Release\Rebex.Net.ProxySocket.dll</HintPath>
+    </Reference>
+    <Reference Include="Rebex.Net.SecureSocket">
+      <HintPath>bin\Release\Rebex.Net.SecureSocket.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AboutBox.Designer.vb">
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AboutBox.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Acch.vb" />
+    <Compile Include="AdminSetting.Designer.vb">
+      <DependentUpon>AdminSetting.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminSetting.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="Configuration.vb" />
+    <Compile Include="eXa_Splash.Designer.vb">
+      <DependentUpon>eXa_Splash.vb</DependentUpon>
+    </Compile>
+    <Compile Include="eXa_Splash.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenRep.vb">
+      <DependentUpon>GenRep.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="MembersManager.Designer.vb">
+      <DependentUpon>MembersManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MembersManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GenRep.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GenRep.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="GenRepHack.vb" />
+    <Compile Include="GenReport.Designer.vb">
+      <DependentUpon>GenReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="GenReport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalExportListForm.Designer.vb">
+      <DependentUpon>LocalExportListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LocalExportListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewElement.Designer.vb">
+      <DependentUpon>NewElement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewElement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PassForm.designer.vb">
+      <DependentUpon>PassForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="PassForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ElementReqList.Designer.vb">
+      <DependentUpon>ElementReqList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ElementReqList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Program.vb" />
+    <Compile Include="SessionList.Designer.vb">
+      <DependentUpon>SessionList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SessionList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraReportChart.Designer.vb">
+      <DependentUpon>XtraReportChart.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReportChart.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_ActionsExp.Designer.vb">
+      <DependentUpon>XtraReport_ActionsExp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_ActionsExp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_ActionsImp.Designer.vb">
+      <DependentUpon>XtraReport_ActionsImp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_ActionsImp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Crypto.vb" />
+    <Compile Include="EmailFollowup.Designer.vb">
+      <DependentUpon>EmailFollowup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmailFollowup.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExpeMailView.Designer.vb">
+      <DependentUpon>ExpeMailView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExpeMailView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewEmailActionForm.Designer.vb">
+      <DependentUpon>NewEmailActionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewEmailActionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeletedEmailExportList.Designer.vb">
+      <DependentUpon>DeletedEmailExportList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DeletedEmailExportList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeletedEmailImportList.Designer.vb">
+      <DependentUpon>DeletedEmailImportList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DeletedEmailImportList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewEmail.Designer.vb">
+      <DependentUpon>NewEmail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewEmail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailExportList.Designer.vb">
+      <DependentUpon>EmailExportList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmailExportList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eMailAction.Designer.vb">
+      <DependentUpon>eMailAction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="eMailAction.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eMailView.Designer.vb">
+      <DependentUpon>eMailView.vb</DependentUpon>
+    </Compile>
+    <Compile Include="eMailView.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailImportList.Designer.vb">
+      <DependentUpon>EmailImportList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmailImportList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EmailManager.Designer.vb">
+      <DependentUpon>EmailManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmailManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateNewDB.Designer.vb">
+      <DependentUpon>CreateNewDB.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CreateNewDB.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DongleForm.Designer.vb">
+      <DependentUpon>DongleForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DongleForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="eMail.Designer.vb">
+      <DependentUpon>eMail.vb</DependentUpon>
+    </Compile>
+    <Compile Include="eMail.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ErrorTrace.Designer.vb">
+      <DependentUpon>ErrorTrace.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorTrace.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="MySettings.vb" />
+    <Compile Include="NewDBFDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NewDBFDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NewEmailAdd.Designer.vb">
+      <DependentUpon>NewEmailAdd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewEmailAdd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewEmailImport.Designer.vb">
+      <DependentUpon>NewEmailImport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewEmailImport.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewExpActionForm.Designer.vb">
+      <DependentUpon>NewExpActionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewExpActionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewImportNoForm.Designer.vb">
+      <DependentUpon>NewImportNoForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImportNoForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraReport_DelaidImp.Designer.vb">
+      <DependentUpon>XtraReport_DelaidImp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_DelaidImp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReminderList.Designer.vb">
+      <DependentUpon>ReminderList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReminderList.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportSelector.Designer.vb">
+      <DependentUpon>ReportSelector.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportSelector.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignedManager.Designer.vb">
+      <DependentUpon>SignedManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SignedManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShortcutManager.Designer.vb">
+      <DependentUpon>ShortcutManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ShortcutManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectNewOrg.Designer.vb">
+      <DependentUpon>SelectNewOrg.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectNewOrg.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FolderManager.Designer.vb">
+      <DependentUpon>FolderManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FolderManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SecurityManager.Designer.vb">
+      <DependentUpon>SecurityManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SecurityManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TypeManager.Designer.vb">
+      <DependentUpon>TypeManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TypeManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LocalImportListForm.Designer.vb">
+      <DependentUpon>LocalImportListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LocalImportListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeletedExportListForm.Designer.vb">
+      <DependentUpon>DeletedExportListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DeletedExportListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeletedImportListForm.Designer.vb">
+      <DependentUpon>DeletedImportListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DeletedImportListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FollowupForm.Designer.vb">
+      <DependentUpon>FollowupForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FollowupForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportOldImages.Designer.vb">
+      <DependentUpon>ImportOldImages.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportOldImages.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoadingFrm.Designer.vb">
+      <DependentUpon>LoadingFrm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoadingFrm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewExpForm.Designer.vb">
+      <DependentUpon>NewExpForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewExpForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DenoteForm.Designer.vb">
+      <DependentUpon>DenoteForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DenoteForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExportListForm.Designer.vb">
+      <DependentUpon>ExportListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ExportListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ImportListForm.Designer.vb">
+      <DependentUpon>ImportListForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ImportListForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewDBFDataSet.vb">
+      <DependentUpon>NewDBFDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="NewImpActionForm.Designer.vb">
+      <DependentUpon>NewImpActionForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImpActionForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewImpForm.Designer.vb">
+      <DependentUpon>NewImpForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="NewImpForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpenDataBaseForm.Designer.vb">
+      <DependentUpon>OpenDataBaseForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OpenDataBaseForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrgManager.Designer.vb">
+      <DependentUpon>OrgManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="OrgManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ScannerForm.Designer.vb">
+      <DependentUpon>ScannerForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ScannerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectOrgForm.Designer.vb">
+      <DependentUpon>SelectOrgForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectOrgForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.designer.vb">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LoginForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SessionType.vb" />
+    <Compile Include="Settings.vb" />
+    <Compile Include="TwainHandler.vb" />
+    <Compile Include="MainSys.Designer.vb">
+      <DependentUpon>MainSys.vb</DependentUpon>
+    </Compile>
+    <Compile Include="MainSys.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="ImpExpModule.vb" />
+    <Compile Include="UsersForm.Designer.vb">
+      <DependentUpon>UsersForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UsersForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XtraReport_DeletedExp.Designer.vb">
+      <DependentUpon>XtraReport_DeletedExp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_DeletedExp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_DeletedImp.Designer.vb">
+      <DependentUpon>XtraReport_DeletedImp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_DeletedImp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_NoActionImp.Designer.vb">
+      <DependentUpon>XtraReport_NoActionImp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_NoActionImp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_NoScanExp.Designer.vb">
+      <DependentUpon>XtraReport_NoScanExp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_NoScanExp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_NoScanImp.Designer.vb">
+      <DependentUpon>XtraReport_NoScanImp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_NoScanImp.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_OrgActivity.Designer.vb">
+      <DependentUpon>XtraReport_OrgActivity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_OrgActivity.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_ToAssigne.Designer.vb">
+      <DependentUpon>XtraReport_ToAssigne.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_ToAssigne.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="XtraReport_UserActivity.Designer.vb">
+      <DependentUpon>XtraReport_UserActivity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="XtraReport_UserActivity.vb">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutBox.resx">
+      <DependentUpon>AboutBox.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminSetting.resx">
+      <DependentUpon>AdminSetting.vb</DependentUpon>
+    </EmbeddedResource>
+    <None Include="GenReport.Images.resx">
+      <DependentUpon>GenReport.vb</DependentUpon>
+    </None>
+    <EmbeddedResource Include="eXa_Splash.resx">
+      <DependentUpon>eXa_Splash.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MembersManager.resx">
+      <DependentUpon>MembersManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GenReport.resx">
+      <DependentUpon>GenReport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalExportListForm.resx">
+      <DependentUpon>LocalExportListForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewElement.resx">
+      <DependentUpon>NewElement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PassForm.resx">
+      <DependentUpon>PassForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ElementReqList.resx">
+      <DependentUpon>ElementReqList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SessionList.resx">
+      <DependentUpon>SessionList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReportChart.resx">
+      <DependentUpon>XtraReportChart.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_ActionsExp.resx">
+      <DependentUpon>XtraReport_ActionsExp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_ActionsImp.resx">
+      <DependentUpon>XtraReport_ActionsImp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailFollowup.resx">
+      <DependentUpon>EmailFollowup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExpeMailView.resx">
+      <DependentUpon>ExpeMailView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEmailActionForm.resx">
+      <DependentUpon>NewEmailActionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletedEmailExportList.resx">
+      <DependentUpon>DeletedEmailExportList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletedEmailImportList.resx">
+      <DependentUpon>DeletedEmailImportList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEmail.resx">
+      <DependentUpon>NewEmail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailExportList.resx">
+      <DependentUpon>EmailExportList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMailAction.resx">
+      <DependentUpon>eMailAction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMailView.resx">
+      <DependentUpon>eMailView.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailImportList.resx">
+      <DependentUpon>EmailImportList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmailManager.resx">
+      <DependentUpon>EmailManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateNewDB.resx">
+      <DependentUpon>CreateNewDB.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DongleForm.resx">
+      <DependentUpon>DongleForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="eMail.resx">
+      <DependentUpon>eMail.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEmailAdd.resx">
+      <DependentUpon>NewEmailAdd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewEmailImport.resx">
+      <DependentUpon>NewEmailImport.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewExpActionForm.resx">
+      <DependentUpon>NewExpActionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImportNoForm.resx">
+      <DependentUpon>NewImportNoForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_DelaidImp.resx">
+      <DependentUpon>XtraReport_DelaidImp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReminderList.resx">
+      <DependentUpon>ReminderList.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportSelector.resx">
+      <DependentUpon>ReportSelector.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignedManager.resx">
+      <DependentUpon>SignedManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShortcutManager.resx">
+      <DependentUpon>ShortcutManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectNewOrg.resx">
+      <DependentUpon>SelectNewOrg.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FolderManager.resx">
+      <DependentUpon>FolderManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SecurityManager.resx">
+      <DependentUpon>SecurityManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TypeManager.resx">
+      <DependentUpon>TypeManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LocalImportListForm.resx">
+      <DependentUpon>LocalImportListForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletedExportListForm.resx">
+      <DependentUpon>DeletedExportListForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeletedImportListForm.resx">
+      <DependentUpon>DeletedImportListForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FollowupForm.resx">
+      <DependentUpon>FollowupForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportOldImages.resx">
+      <DependentUpon>ImportOldImages.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoadingFrm.resx">
+      <DependentUpon>LoadingFrm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewExpForm.resx">
+      <DependentUpon>NewExpForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DenoteForm.resx">
+      <DependentUpon>DenoteForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExportListForm.resx">
+      <DependentUpon>ExportListForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ImportListForm.resx">
+      <DependentUpon>ImportListForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="NewImpActionForm.resx">
+      <DependentUpon>NewImpActionForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewImpForm.resx">
+      <DependentUpon>NewImpForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpenDataBaseForm.resx">
+      <DependentUpon>OpenDataBaseForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OrgManager.resx">
+      <DependentUpon>OrgManager.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ScannerForm.resx">
+      <DependentUpon>ScannerForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectOrgForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SelectOrgForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainSys.resx">
+      <DependentUpon>MainSys.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UsersForm.resx">
+      <DependentUpon>UsersForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_DeletedExp.resx">
+      <DependentUpon>XtraReport_DeletedExp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_DeletedImp.resx">
+      <DependentUpon>XtraReport_DeletedImp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_NoActionImp.resx">
+      <DependentUpon>XtraReport_NoActionImp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_NoScanExp.resx">
+      <DependentUpon>XtraReport_NoScanExp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_NoScanImp.resx">
+      <DependentUpon>XtraReport_NoScanImp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_OrgActivity.resx">
+      <DependentUpon>XtraReport_OrgActivity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_ToAssigne.resx">
+      <DependentUpon>XtraReport_ToAssigne.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XtraReport_UserActivity.resx">
+      <DependentUpon>XtraReport_UserActivity.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="GenRep.xsc">
+      <DependentUpon>GenRep.xsd</DependentUpon>
+    </None>
+    <None Include="GenRep.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>GenRep.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="GenRep.xss">
+      <DependentUpon>GenRep.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="WinImpExp_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Blue hills.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\img136.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="NewDBFDataSet.xsc">
+      <DependentUpon>NewDBFDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="NewDBFDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>NewDBFDataSet.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="NewDBFDataSet.xss">
+      <DependentUpon>NewDBFDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="easymoblog.ico" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0031.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0030.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0029.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0028.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0027.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0026.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0025.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0024.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0023.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0022.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0021.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0020.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0019.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0018.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0017.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0016.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0015.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0014.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0013.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0012.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0011.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0010.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0009.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0008.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0007.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0006.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0005.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0004.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0003.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0002.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0001.png" />
+    <EmbeddedResource Include="Resources\SplashScreenPSD0000.png" />
+    <None Include="Resources\SplashScreenPSD0.png" />
+    <None Include="Resources\nic.gif" />
+    <None Include="Resources\alarm.wav" />
+    <None Include="Resources\CreateTableRes.txt" />
+    <None Include="Resources\CreateTableResNoData.txt" />
+    <Content Include="eXaDev.swf" />
+    <Content Include="rcp958.dll" />
+    <None Include="Resources\ding.wav" />
+    <Content Include="Resources\images.jpg" />
+    <None Include="Resources\Windows Notify.wav" />
+    <None Include="Resources\mso2008-ent3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="DevExpress.Charts.v15.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.CodeParser.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Data.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.PivotGrid.v15.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.RichEdit.v15.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Utils.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Xpf.Printing.v15.1.Service">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.Xpo.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraBars.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraCharts.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraCharts.v15.1.Extensions">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraEditors.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraGrid.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraLayout.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraNavBar.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraPivotGrid.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraPrinting.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraReports.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraReports.v15.1.Extensions">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraReports.v15.1.Service">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraRichEdit.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraRichEdit.v15.1.Extensions">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraRichEdit.v15.1.Printing">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraScheduler.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraScheduler.v15.1.Core">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraTreeList.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraVerticalGrid.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="DevExpress.XtraWizard.v15.1">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="easymoblog.ico">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="eXaDev.swf">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="rcp958.dll">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="Rebex.Mail">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Rebex.Net.Imap">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Rebex.Net.ProxySocket">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Rebex.Net.SecureSocket">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>Assembly</FileType>
+    </PublishFile>
+    <PublishFile Include="Resources\images.jpg">
+      <Visible>False</Visible>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\Debug\" />
+    <Folder Include="bin\Release\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
